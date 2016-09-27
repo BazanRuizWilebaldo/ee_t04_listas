@@ -14,18 +14,15 @@ public abstract class ListaSimplementeLigada<T> implements IListas<T> {
         inicio = null;
     }
 
-    
     private Nodo<T> inicio;
+
     public Nodo<T> getInicio() {
         return inicio;
     }
+
     public void setInicio(Nodo<T> inicio) {
         this.inicio = inicio;
     }
-    
-    
-    
-    
 
     public void inserta_inicio(T dato) {
         Nodo<T> aux = new Nodo<T>(dato);
@@ -132,6 +129,9 @@ public abstract class ListaSimplementeLigada<T> implements IListas<T> {
         if (inicio != null) {
             inicio = inicio.getSiguiente();
         }
+        //
+        return (T) inicio;
+
     }
 
     public T elimina_ultimo() {
@@ -147,7 +147,9 @@ public abstract class ListaSimplementeLigada<T> implements IListas<T> {
 
             }
             anterior.setSiguiente(null);
+
         }
+        return (T) anterior;
 
     }
 
